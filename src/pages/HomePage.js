@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormattedMessage } from "react-intl"; // Importar FormattedMessage
 import RobotList from "../components/RobotList";
 import RobotDetail from "../components/RobotDetail";
 
@@ -7,16 +8,15 @@ const HomePage = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center">Adopta un Robot con Robot Lovers!</h2>
+      <h2 className="text-center">
+        <FormattedMessage id="adoptTitle" /> {/* Traducción automática */}
+      </h2>
       <div className="text-center">
         <img src="/assets/loginImage.png" alt="Robots" className="img-fluid" style={{ maxWidth: "600px" }} />
       </div>
 
       <div className="row mt-4">
-        {/*Se importa el componente d ela lista de robots*/}
         <RobotList onSelectRobot={setSelectedRobotId} />
-
-        {/*Se importa el componente del detalle*/}
         <RobotDetail selectedRobotId={selectedRobotId} />
       </div>
 

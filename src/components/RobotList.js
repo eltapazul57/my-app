@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getRobots } from "../services/robotService";
+import { FormattedMessage } from "react-intl"; 
 
 const RobotList = ({ onSelectRobot }) => {
   const [robots, setRobots] = useState([]);
@@ -17,10 +18,10 @@ const RobotList = ({ onSelectRobot }) => {
       <table className="table table-striped text-center">
         <thead className="table-dark">
           <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Modelo</th>
-            <th>Empresa Fabricante</th>
+            <th><FormattedMessage id="id" /></th>
+            <th><FormattedMessage id="name" /></th>
+            <th><FormattedMessage id="model" /></th>
+            <th><FormattedMessage id="manufacturer" /></th>
           </tr>
         </thead>
         <tbody>
